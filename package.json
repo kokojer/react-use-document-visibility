@@ -1,0 +1,46 @@
+{
+	"name": "@kokojer/react-use-document-visibility",
+	"version": "1.1.0",
+	"description": "",
+	"type": "module",
+	"source": "src/hook.ts",
+	"main ": "dist/react-use-document-visibility.cjs",
+	"module": "dist/react-use-document-visibility.module.js",
+	"unpkg": "dist/react-use-document-visibility.umd.js",
+	"exports": {
+		"require": "./dist/react-use-document-visibility.cjs",
+		"default": "./dist/react-use-document-visibility.modern.js"
+	},
+	"scripts": {
+		"build": "microbundle",
+		"dev": "microbundle watch",
+		"lint": "eslint --ext .ts,.tsx,.js src --fix"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/kokojer/react-use-document-visibility.git"
+	},
+	"homepage": "https://github.com/kokojer/react-use-document-visibility",
+	"types": "./dist/hook.d.ts",
+	"keywords": [
+		"react",
+		"hook",
+		"document",
+		"visibility"
+	],
+	"author": "kokojer",
+	"license": "ISC",
+	"devDependencies": {
+		"@typescript-eslint/eslint-plugin": "^5.27.1",
+		"eslint": "^8.17.0",
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-plugin-prettier": "^4.0.0",
+		"eslint-plugin-react": "^7.30.0",
+		"eslint-plugin-react-hooks": "^4.5.0",
+		"microbundle": "^0.15.0",
+		"prettier": "^2.6.2"
+	},
+	"dependencies": {
+		"react": "^18"
+	}
+}

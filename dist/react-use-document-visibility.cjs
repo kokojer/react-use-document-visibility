@@ -1,0 +1,2 @@
+var e=require("react");exports.useDocumentVisibility=function(){var i=e.useState(0),n=i[0],t=i[1],u=e.useState(!0),r=u[0],c=u[1],o=[];return e.useEffect(function(){var e=function(){"visible"===document.visibilityState?c(!0):c(!1),document.hidden&&t(function(e){return++e}),o.forEach(function(e){e()})};return document.addEventListener("visibilitychange",e),function(){return document.removeEventListener("visibilitychange",e)}},[]),{counter:n,visible:r,onVisibilityChange:function(e){o.push(e.bind(null,r))}}};
+//# sourceMappingURL=react-use-document-visibility.cjs.map

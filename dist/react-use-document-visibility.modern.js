@@ -1,0 +1,2 @@
+import{useState as i,useEffect as e}from"react";const t=()=>{const[t,n]=i(0),[o,r]=i(!0),c=[];return e(()=>{const i=()=>{"visible"===document.visibilityState?r(!0):r(!1),document.hidden&&n(i=>++i),c.forEach(i=>{i()})};return document.addEventListener("visibilitychange",i),()=>document.removeEventListener("visibilitychange",i)},[]),{counter:t,visible:o,onVisibilityChange:i=>{c.push(i.bind(null,o))}}};export{t as useDocumentVisibility};
+//# sourceMappingURL=react-use-document-visibility.modern.js.map
