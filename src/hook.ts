@@ -11,21 +11,25 @@ export const useDocumentVisibility = (): TypesHook => {
   const [visible, setVisible] = useState(true);
   const callbacks: Array<(isVisible?: boolean) => void> = [];
   const onVisibilityChange = (callback: () => void) => {
-    callbacks.push(callback.bind(null, visible));
+    callbacks.push(callback);
   };
   useEffect(() => {
     const handlerVisibilityChange = (): void => {
       document.visibilityState === "visible"
         ? setVisible(true)
         : setVisible(false);
-      document.hidden ? setCounter((counter) => ++counter) : "";
+      if (document.hidden) {
+        setCounter((counter) => ++counter);
+      }
       callbacks.forEach((callback) => {
-        callback();
+        callback(document.visibilityState === "visible");
       });
     };
     document.addEventListener("visibilitychange", handlerVisibilityChange);
-    return () =>
+    return () => {
       document.removeEventListener("visibilitychange", handlerVisibilityChange);
+      callbacks.splice(0, callbacks.length);
+    };
   }, []);
   return {
     counter,
