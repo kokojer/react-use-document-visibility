@@ -28,6 +28,7 @@ export const useDocumentVisibility = (): TypesHook => {
     document.addEventListener("visibilitychange", handlerVisibilityChange);
     return () => {
       document.removeEventListener("visibilitychange", handlerVisibilityChange);
+      callbacks.splice(0, callbacks.length);
     };
   }, []);
   return {
